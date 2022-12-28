@@ -2,10 +2,9 @@ void API_call(String card_UID){
   // Create a JSON payload
   StaticJsonDocument<200> outbound_JSON_message;
 
-  outbound_JSON_message["card_uid"] = card_UID;
-  outbound_JSON_message["transaction_amount"] = TRANSACTION_AMOUNT;
-  outbound_JSON_message["transaction_description"] = TRANSACTION_DESCRIPTION;
-  //outbound_JSON_message["api_token"] = API_TOKEN;
+  outbound_JSON_message["card_uuid"] = card_UID;
+  outbound_JSON_message["amount"] = TRANSACTION_AMOUNT;
+  outbound_JSON_message["description"] = TRANSACTION_DESCRIPTION;
 
   char JSONmessageBuffer[200];
   serializeJson(outbound_JSON_message, JSONmessageBuffer, sizeof(JSONmessageBuffer));
